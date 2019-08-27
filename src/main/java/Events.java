@@ -1,14 +1,17 @@
 public class Events extends Task {
 
-    protected String by;
+    protected String at;
 
-    public Events(String description, String by) {
+    public Events(String description, String at) {
         super(description);
-        this.by = by;
+        this.at = at;
     }
 
     @Override
     public String toString() {
-        return "[D]" + super.toString() + " (by: " + by + ")";
+        return "[D]" + super.toString() + " (by: " + at + ")";
+    }
+    public void setBy(String day) {
+        this.at = day;
     }
 }

@@ -67,7 +67,22 @@ public class Duke {
 
             }
             else if (input.startsWith("event")){
-                // do something
+                String[] parts = input.split(" |/at");
+                String byDay = input.substring(input.lastIndexOf("at") +1 );
+                parts[0] = "";
+                parts[parts.length-1] = "";
+                String description = Arrays.toString(parts);
+
+                Events item = new Events(description, byDay);
+                userlist[counter] = item;
+
+
+
+                System.out.print(space + line);
+                System.out.println(space + "Got it. I've added this task: \n" + space + "  [" + userlist[counter].getStatusIcon() + "] " + userlist[counter].getDescription());
+                System.out.println(space + "Now you have " + counter + " tasks in the list");
+                System.out.print(space + line);
+                counter += 1;
 
             }
             else
