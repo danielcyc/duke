@@ -1,10 +1,12 @@
 public class Task {
     protected String description;
     protected boolean isDone;
+    String type;
 
     public Task(String description) {
         this.description = description;
         this.isDone = false;
+        this.type = "Unknown";
     }
 
     public String getStatusIcon() {
@@ -18,5 +20,15 @@ public class Task {
     public void markAsDone(){
         this.isDone = true;
     }
+
+    public void setType(String input) {
+        this.type = input;
+    }
+
+    public String getType(){
+        return type;
+    }
+
+
 }
 
