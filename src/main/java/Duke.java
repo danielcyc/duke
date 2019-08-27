@@ -61,7 +61,7 @@ public class Duke {
 
                 System.out.print(space + line);
                 System.out.println(space + "Got it. I've added this task: \n" + space + "  [" + userlist[counter].getStatusIcon() + "] " + userlist[counter].getDescription());
-                System.out.println(space + "Now you have " + counter + " tasks in the list");
+                System.out.println(space + "Now you have " + (counter+1) + " tasks in the list");
                 System.out.print(space + line);
                 counter += 1;
 
