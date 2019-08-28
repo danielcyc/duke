@@ -28,6 +28,11 @@ public class Task {
     public String getType(){
         return type;
     }
+    @Override
+    public String toString() {
+        return " [" + this.getType() + "][" + this.getStatusIcon() + "] " + this.getDescription();
+
+    }
 
 
 }

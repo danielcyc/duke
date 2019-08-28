@@ -34,28 +34,32 @@ public class Duke {
                 item.setType("T");
                 userlist.add(item);
 
-                System.out.println(PrintableStrings.space + PrintableStrings.line + PrintableStrings.space + "Got it. I've added this task: \n" +
-                        PrintableStrings.space + "  [" + item.getType() + "][" + item.getStatusIcon() + "] " + item.getDescription() + "\n" +
-                                PrintableStrings.space + "Now you have " + userlist.getCounter() + " tasks in the list.\n" +
-                        PrintableStrings.space + PrintableStrings.line);
+                System.out.println(
+                        PrintableStrings.space + PrintableStrings.line +
+                            PrintableStrings.space + "Got it. I've added this task: \n " +
+                            PrintableStrings.space + item + "\n" +
+                            PrintableStrings.space + "Now you have " + userlist.getCounter() + " tasks in the list.\n" +
+                            PrintableStrings.space + PrintableStrings.line);
             }
-           /*else if (input.startsWith("deadline")){
+           else if (input.startsWith("deadline")){
                 String[] parts = input.split(" |/by");
+
                 String byDay = input.substring(input.lastIndexOf("/by") +1 );
+
                 parts[0] = "";
                 parts[parts.length-1] = "";
                 String description = Arrays.toString(parts);
+                System.out.println(description);
 
                 Deadline item = new Deadline(description, byDay);
-                userlist[counter] = item;
+                userlist.add(item);
 
-
-                System.out.print(PrintableStrings.space + PrintableStrings.line);
-                System.out.println(PrintableStrings.space + "Got it. I've added this task: \n" + PrintableStrings.space + "  [" + userlist[counter].getStatusIcon() + "] " + userlist[counter].getDescription());
-                System.out.println(PrintableStrings.space + "Now you have " + (counter+1) + " tasks in the list");
-                System.out.print(PrintableStrings.space + PrintableStrings.line);
-                counter += 1;
-
+                System.out.println(
+                        PrintableStrings.space + PrintableStrings.line +
+                                PrintableStrings.space + "Got it. I've added this task: \n " +
+                                PrintableStrings.space + item + "\n" +
+                                PrintableStrings.space + "Now you have " + userlist.getCounter() + " tasks in the list.\n" +
+                                PrintableStrings.space + PrintableStrings.line);
             }
             else if (input.startsWith("event")){
                 String[] parts = input.split(" |/at");
@@ -65,17 +69,18 @@ public class Duke {
                 String description = Arrays.toString(parts);
 
                 Event item = new Event(description, byDay);
-                userlist[counter] = item;
+                userlist.add(item);
 
 
+                System.out.println(
+                        PrintableStrings.space + PrintableStrings.line +
+                                PrintableStrings.space + "Got it. I've added this task: \n " +
+                                PrintableStrings.space + item + "\n" +
+                                PrintableStrings.space + "Now you have " + userlist.getCounter() + " tasks in the list.\n" +
+                                PrintableStrings.space + PrintableStrings.line);
 
-                System.out.print(PrintableStrings.space + PrintableStrings.line);
-                System.out.println(PrintableStrings.space + "Got it. I've added this task: \n" + PrintableStrings.space + "  [" + userlist[counter].getStatusIcon() + "] " + userlist[counter].getDescription());
-                System.out.println(PrintableStrings.space + "Now you have " + counter + " tasks in the list");
-                System.out.print(PrintableStrings.space + PrintableStrings.line);
-                counter += 1;
 
-            }*/
+            }
             else
              {
                  Task item = new Task(input);

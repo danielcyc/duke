@@ -5,13 +5,12 @@ public class Event extends Task {
     public Event(String description, String at) {
         super(description);
         this.at = at;
+        type = "E";
     }
 
     @Override
     public String toString() {
-        return "[D]" + super.toString() + " (by: " + at + ")";
+        return  super.toString() + " (at: " + at + ")";
     }
-    public void setBy(String day) {
-        this.at = day;
-    }
+
 }
