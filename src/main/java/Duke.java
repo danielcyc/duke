@@ -42,12 +42,8 @@ public class Duke {
                                 PrintableStrings.space + PrintableStrings.line);
                 }
                else if (input.startsWith("deadline")){
-                   System.out.println("works here");
                     String description = Deadline.getDescription(input);
-                    System.out.println("works here 2");
                     String byDay = Deadline.getBy(input);
-                    System.out.println("can work leh" +
-                            "");
                     Deadline item = new Deadline(description, byDay);
                     userlist.add(item);
                     System.out.println(
