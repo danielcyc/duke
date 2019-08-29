@@ -42,15 +42,25 @@ public class Duke {
                             PrintableStrings.space + PrintableStrings.line);
             }
            else if (input.startsWith("deadline")){
-                String[] parts = input.split(" |/by");
-
-                String byDay = input.substring(input.lastIndexOf("/by") +1 );
-
-                parts[0] = "";
-                parts[parts.length-1] = "";
-                String description = Arrays.toString(parts);
-                System.out.println(description);
-
+                //String[] parts = input.split(" /by | ");
+                //System.out.println(Arrays.toString(parts));
+                String byDay = input.substring(input.lastIndexOf("/by") + 4 );
+                String description = input.substring(input.lastIndexOf("deadline")+9, input.lastIndexOf(" /by"));
+                //System.out.println(d);
+                //String description = "";
+                /*for (int i = 1; i < parts.length-1; i++  ){
+                    description += parts[i];
+                    if (i == parts.length -2) {
+                        continue;
+                    }
+                    else {
+                        description += " ";
+                    }
+                }*/
+                //System.out.println(description);
+                //String d = String.join("|", parts);
+                //String description = String.join(" ", parts); //Arrays.toString(parts);
+                //System.out.println(d);
                 Deadline item = new Deadline(description, byDay);
                 userlist.add(item);
 
@@ -62,15 +72,12 @@ public class Duke {
                                 PrintableStrings.space + PrintableStrings.line);
             }
             else if (input.startsWith("event")){
-                String[] parts = input.split(" |/at");
-                String byDay = input.substring(input.lastIndexOf("at") +1 );
-                parts[0] = "";
-                parts[parts.length-1] = "";
-                String description = Arrays.toString(parts);
+                String description = input.substring(input.lastIndexOf("event")+6, input.lastIndexOf(" /at"));
+                String time = input.substring(input.lastIndexOf("/at") +4 );
+                //System.out.println(time);
 
-                Event item = new Event(description, byDay);
+                Event item = new Event(description, time);
                 userlist.add(item);
-
 
                 System.out.println(
                         PrintableStrings.space + PrintableStrings.line +
