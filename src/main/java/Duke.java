@@ -91,10 +91,21 @@ public class Duke {
                     }
 
 
-                } catch (Exception e) {
+                }
+
+                catch (InvalidTodoException e) {
+                }
+
+                catch (InvalidDeadlineException e) {
+                    }
+
+                catch(InvalidInputException e) {
+                }
+                catch (Exception e) {
                     //new DukeExceptionHandler(e);
-                    System.out.println("Something went wrong here");
-                    //main(["",]);
+                    System.out.println(PrintableStrings.space + PrintableStrings.line +
+                            PrintableStrings.space+ "☹ OOPS!!! That's an invalid input! Please try again.\n" +
+                            PrintableStrings.space + PrintableStrings.line );
                 }
             }
     }
