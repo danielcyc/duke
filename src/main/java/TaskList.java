@@ -25,6 +25,15 @@ public class TaskList {
         System.out.print(PrintableStrings.space + "["+ list[index].getType() + "] [" + list[index].getStatusIcon() + "] "+
                 list[index].getDescription() + "\n");
     }
+    public static String saveList(){
+        String Output = "";
+
+        for (int i = 0; i < counter; i++){
+            Output += list[i]+ "\n";
+        }
+
+        return Output;
+    }
 
     public static Task getListIndex(int index) {
         return list[index];

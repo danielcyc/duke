@@ -1,13 +1,20 @@
+import java.io.IOException;
 import java.util.Scanner;
+
 public class Duke {
         public static void main(String[] args) {
         PrintableStrings.printWelcome();
         TaskList userlist = new TaskList(); // init task list
         Scanner user_input = new Scanner(System.in); // init scanner
-
+            try {
+                userlist = FileLoader.Load();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             while (true) { // keep program running
                 try {
                     String input = user_input.nextLine(); // take in input
+
                     if (input.equals("bye")) {
                         PrintableStrings.printBye();
                         break; // ends program
@@ -86,8 +93,13 @@ public class Duke {
                      userlist.add(item);
                     System.out.println(PrintableStrings.space + PrintableStrings.line + PrintableStrings.space + " added: " + item.getDescription() + "\n" + PrintableStrings.space + PrintableStrings.line);
                     */
-                        //
                         throw new InvalidInputException();
+                    }
+
+                    try {
+                        Saver.Saver(TaskList.saveList());
+                    } catch (IOException e) {
+                        e.printStackTrace();
                     }
 
 
