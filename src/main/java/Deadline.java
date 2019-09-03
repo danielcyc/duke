@@ -1,3 +1,11 @@
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
+
+import static java.time.format.DateTimeFormatter.ofLocalizedDate;
+import static java.time.format.DateTimeFormatter.ofPattern;
+
 public class Deadline extends Task {
 
     protected String by;
@@ -12,9 +20,14 @@ public class Deadline extends Task {
     public String toString() {
         return super.toString() + " (by: " + by + ")";
     }
-    public static String getBy(String input) throws InvalidDeadlineException{
+    public static LocalDateTime getBy(String input) throws InvalidDeadlineException{
         if (input.contains("/by")) {
-            return input.substring(input.lastIndexOf("/by") + 4);
+            String text = input.substring(input.lastIndexOf("/by") + 4);
+            System.out.println(text);
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HHmm");
+            LocalDateTime bytime = LocalDateTime.parse(text, formatter);
+
+            return bytime;
         }
         else {
             System.out.println("problem");

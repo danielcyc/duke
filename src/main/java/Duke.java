@@ -1,5 +1,10 @@
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
+import java.time.LocalDate;
 
 public class Duke {
         public static void main(String[] args) {
@@ -46,8 +51,11 @@ public class Duke {
                                         PrintableStrings.space + PrintableStrings.line);
                     } else if (input.startsWith("deadline")) {
                         String description = Deadline.getDescription(input);
-                        String byDay = Deadline.getBy(input);
-                        Deadline item = new Deadline(description, byDay);
+                        LocalDateTime byDay = Deadline.getBy(input);
+                        System.out.println(byDay);
+                        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HHmm");
+                        String strDate = formatter.format(byDay);
+                        Deadline item = new Deadline(description, strDate);
                         userlist.add(item);
                         System.out.println(
                                 PrintableStrings.space + PrintableStrings.line +
@@ -105,11 +113,11 @@ public class Duke {
 
                 }
 
-                catch (InvalidTodoException e) {
+                catch (InvalidTodoException | InvalidDeadlineException | InvalidInputException e) {
                 }
 
-                catch (InvalidDeadlineException e) {
-                    }
+                /*catch (InvalidDeadlineException e) {
+                }
 
                 catch(InvalidInputException e) {
                 }
@@ -118,7 +126,7 @@ public class Duke {
                     System.out.println(PrintableStrings.space + PrintableStrings.line +
                             PrintableStrings.space+ "☹ OOPS!!! That's an invalid input! Please try again.\n" +
                             PrintableStrings.space + PrintableStrings.line );
-                }
+                }*/
             }
     }
 }
