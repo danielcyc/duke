@@ -39,6 +39,10 @@ public class Duke {
                         int index = Integer.parseInt(input.substring(7)) - 1;
                         userlist.remove(index);
                     }
+                    else if (input.startsWith("find")){
+                        String keyword = input.substring(5);
+                        userlist.find(keyword);
+                    }
 
                     else if (input.startsWith("todo")) {
                         //String[] parts = input.split(" ");

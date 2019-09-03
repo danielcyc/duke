@@ -50,4 +50,16 @@ public class TaskList {
                 PrintableStrings.space + PrintableStrings.line);
 
     }
+    public static void find (String keyword){
+        int counter = 1;
+        System.out.println(PrintableStrings.space + PrintableStrings.line +
+                PrintableStrings.space + "Here are the matching tasks in your list:");
+        for (int i = 0; i < list.size(); i++){
+            if (list.get(i).getDescription().contains(keyword)) {
+                System.out.println(PrintableStrings.space + Integer.toString(counter) + "." + list.get(i));
+                counter++;
+            }
+        }
+        System.out.println(PrintableStrings.space + PrintableStrings.line);
+    }
 }
