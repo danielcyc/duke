@@ -34,7 +34,13 @@ public class Duke {
                                 PrintableStrings.space + "Nice! I've marked this task as done:\n" +
                                 PrintableStrings.space + userlist.getListIndex(index) + "\n" +
                                 PrintableStrings.space + PrintableStrings.line);
-                    } else if (input.startsWith("todo")) {
+                    }
+                    else if (input.startsWith("delete")){
+                        int index = Integer.parseInt(input.substring(7)) - 1;
+                        userlist.remove(index);
+                    }
+
+                    else if (input.startsWith("todo")) {
                         //String[] parts = input.split(" ");
                         if (input.equals("todo")) {
                             throw new InvalidTodoException();
@@ -47,7 +53,7 @@ public class Duke {
                                 PrintableStrings.space + PrintableStrings.line +
                                         PrintableStrings.space + "Got it. I've added this task: \n " +
                                         PrintableStrings.space + item + "\n" +
-                                        PrintableStrings.space + "Now you have " + userlist.getCounter() + " tasks in the list.\n" +
+                                        PrintableStrings.space + "Now you have " + userlist.size() + " tasks in the list.\n" +
                                         PrintableStrings.space + PrintableStrings.line);
                     } else if (input.startsWith("deadline")) {
                         String description = Deadline.getDescription(input);
@@ -61,7 +67,7 @@ public class Duke {
                                 PrintableStrings.space + PrintableStrings.line +
                                         PrintableStrings.space + "Got it. I've added this task: \n " +
                                         PrintableStrings.space + item + "\n" +
-                                        PrintableStrings.space + "Now you have " + userlist.getCounter() + " tasks in the list.\n" +
+                                        PrintableStrings.space + "Now you have " + userlist.size() + " tasks in the list.\n" +
                                         PrintableStrings.space + PrintableStrings.line);
                         //String[] parts = input.split(" /by | ");
                         //System.out.println(Arrays.toString(parts));
@@ -92,7 +98,8 @@ public class Duke {
                                 PrintableStrings.space + PrintableStrings.line +
                                         PrintableStrings.space + "Got it. I've added this task: \n " +
                                         PrintableStrings.space + item + "\n" +
-                                        PrintableStrings.space + "Now you have " + userlist.getCounter() + " tasks in the list.\n" +
+                                        PrintableStrings.space + "Now you have " + userlist.size()
+ + " tasks in the list.\n" +
                                         PrintableStrings.space + PrintableStrings.line);
 
 

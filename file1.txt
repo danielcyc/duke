@@ -1,7 +1,4 @@
-[D][✘] fkal; (by: lkas)
-[T][✓] faj
 [E][✓] dajkl (at: dklas;)
-[T][✓] nish
 [E][✘] dasd (at: asda)
 [D][✘] ajdflkh (by: lakdfjha)
 [D][✓] abc (by: 03/12/2030 1900)
