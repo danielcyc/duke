@@ -1,10 +1,7 @@
 import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
-import java.time.LocalDate;
 
 public class Duke {
         public static void main(String[] args) {
@@ -127,7 +124,7 @@ public class Duke {
                 catch (InvalidTodoException | InvalidDeadlineException | InvalidInputException e) {
                 }
 
-                /*catch (InvalidDeadlineException e) {
+                catch (InvalidDeadlineException e) {
                 }
 
                 catch(InvalidInputException e) {
@@ -137,7 +134,7 @@ public class Duke {
                     System.out.println(PrintableStrings.space + PrintableStrings.line +
                             PrintableStrings.space+ "☹ OOPS!!! That's an invalid input! Please try again.\n" +
                             PrintableStrings.space + PrintableStrings.line );
-                }*/
+                }
             }
     }
 }
