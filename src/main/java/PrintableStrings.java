@@ -1,3 +1,6 @@
+/**
+ * Represents standard strings to be printed,
+ */
 public class PrintableStrings {
     protected static String logo = " ____        _        \n"
             + "|  _ \\ _   _| | _____ \n"

@@ -1,6 +1,13 @@
 import java.io.*;
-
+/**
+ * Represents a fileloader class
+ */
 public class FileLoader {
+    /**
+     * Loads a txt file form a specified directory.
+     * @return TaskList an object class of a task list
+     * @throws IOException if there is an invalid input by the user
+     */
     public static TaskList Load () throws IOException {
         TaskList output = new TaskList(); // init task list
         // The name of the file to open.
