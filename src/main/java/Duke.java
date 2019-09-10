@@ -124,11 +124,7 @@ public class Duke {
                 catch (InvalidTodoException | InvalidDeadlineException | InvalidInputException e) {
                 }
 
-                catch (InvalidDeadlineException e) {
-                }
 
-                catch(InvalidInputException e) {
-                }
                 catch (Exception e) {
                     //new DukeExceptionHandler(e);
                     System.out.println(PrintableStrings.space + PrintableStrings.line +
