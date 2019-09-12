@@ -7,4 +7,11 @@ public class DukeTest {
     public void dummyTest(){
         assertEquals(2, 2);
     }
+    @Test
+    public void TestPrintBye() throws InvalidDeadlineException {
+        assertEquals(Deadline.getDescription( "deadline abc /by 12"), "abc");
+    }
+
+
+
 }

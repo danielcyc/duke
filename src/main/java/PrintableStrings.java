@@ -19,7 +19,7 @@ public class PrintableStrings {
                 space + "What can I do for you?\n"+
                 space + line);
     }
-    public PrintableStrings(){
-    }
+    //Public PrintableStrings(){
+    //}
 }
 
