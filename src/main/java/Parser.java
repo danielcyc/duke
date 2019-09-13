@@ -110,7 +110,8 @@ public class Parser {
                 throw new InvalidInputException();
             }
         } catch (InvalidTodoException | InvalidDeadlineException | InvalidInputException e) {
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             //new DukeExceptionHandler(e);
             System.out.println(PrintableStrings.space + PrintableStrings.line +
                     PrintableStrings.space + " OOPS!!! That's an invalid input! Please try again.\n" +
